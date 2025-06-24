@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 8px;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px;
+            font-weight: 4;
+        }
+
+        form {
+            margin: 20px ;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 6px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shortener</title>
+</head>
+
+<body>
+    <h1>Welcome to the URL Shortener</h1>
+    <% if(locals.id){ %>
+        <p>Your shortened URL is: https://localhost:8001/url/<%= id %></p>
+    <%}%>
+    <div>
+        <form action="/url" method="POST">
+            <label>Enter your original URL</label>
+            <input type="text" name="url" placeholder="https://example.com" required>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+
+</html>
